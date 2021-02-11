@@ -1,5 +1,5 @@
 # travelPermits
-Decentralized covid19 Travel Permission app made with Solidity &amp; React.js
+Decentralized covid19 Travel Permission app made with Solidity &amp; React.js. It uses ERC721 token standard.
 
 
 # How to run

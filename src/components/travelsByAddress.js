@@ -9,7 +9,7 @@ const RequestByAddress = ({myFunc}) => {
     useEffect(() => console.log(arr), [arr])
     
     return <div style={{display:"flex", flexDirection:"column"}}>
-        <h1>Requests by Address</h1>
+        <h2>Requests by Address</h2>
         <div style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
         <input value={address}
             placeholder='Address'

@@ -8,7 +8,7 @@ const SearchPermit = ({myFunc}) => {
     const handleClick = async () => setPermit(await myFunc(id))
 
     return <div className="column text-center" style={{display:"flex", flexDirection:"column"}}>
-        <h1>Search Travel</h1>
+        <h2>Search Travel</h2>
         <div className="row content mr-auto ml-auto" style={{display:"flex", flexDirection:"column"}}>
         <input value={id}
             placeholder='Travel ID'

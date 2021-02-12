@@ -20,7 +20,7 @@ contract travelPermit is ERC721Full {
     struct Person{
         string fName;
         string lName;
-        uint256 citizenshipNumber;
+        string citizenshipNumber;
         
     }
     
@@ -45,9 +45,11 @@ contract travelPermit is ERC721Full {
     
     mapping(address => bool) public isAdmin;
     mapping(address => bool) public isMaintainer;
+
+    mapping(address => Person) public citizens;
     
     constructor() ERC721Full("Travel", "TRVL") public{
-        isAdmin[0xB6d5033ff68Ca514054AD8A85dF4Da2C4a631112] = true;
+        isAdmin[0xe8a93f9BA571a30a63De1477458d61D720405Ad3] = true;
     }
     
     function requestPermission(address _addr, string memory from, string memory to, uint256 startTime,uint256 endTime) public{
@@ -140,6 +142,10 @@ contract travelPermit is ERC721Full {
 
     function userTravel(uint id) public view returns(Travel memory ){
         return travels[userTravelPermits[msg.sender][id]];
+    }
+    function userRegister(string memory _fn, string memory _ln, string memory  _cn) public {
+        Person memory temp = Person(_fn,_ln, _cn);
+        citizens[msg.sender] = temp;
     }
 
 }

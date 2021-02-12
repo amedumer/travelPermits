@@ -3,9 +3,11 @@ import ApprovePermit from './approvePermit';
 import Permission from './permissions';
 import SearchPermit from './searchPermit';
 import RequestByAddress from './travelsByAddress';
+import CitizenInfo from './searchCitizen'
+import CitizenSearch from './searchCitizen';
 
 
-const AdminPanel = ({approve, setAdmin,setMaintain,searchTrv, trvByAddr}) => {
+const AdminPanel = ({approve, setAdmin,setMaintain,searchTrv, trvByAddr,searchCit}) => {
     return<div className="column">
     <main role="main" className="col-lg-12 d-flex text-center">
     <div className="row content mr-auto ml-auto">
@@ -22,6 +24,10 @@ const AdminPanel = ({approve, setAdmin,setMaintain,searchTrv, trvByAddr}) => {
         </div>
     <div className="row content mr-auto ml-auto">
         <RequestByAddress myFunc = {async (id) => await trvByAddr(id)}></RequestByAddress>
+        <br></br>
+        </div>
+    <div className="row content mr-auto ml-auto">
+        <CitizenSearch myFunc = {async (addr) => await searchCit(addr)}></CitizenSearch>
         <br></br>
         </div>
 

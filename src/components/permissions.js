@@ -5,7 +5,7 @@ const setPermissions = ({setAdmin,setMaintainer}) => {
     const [maintainerId, setMaintainerId] = useState("")
 
     return <div style={{display:"flex", flexDirection:"column"}}>
-        <h1>Give Permission</h1>
+        <h2>Give Permission</h2>
         <div style={{display:"flex", flexDirection:"row"}}>
         <div style={{display:"flex", flexDirection:"column"}}>
         <input value={adminId}

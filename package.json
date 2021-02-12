@@ -1,7 +1,7 @@
 {
-  "name": "eth-marketplace",
+  "name": "travel-permits",
   "version": "0.1.0",
-  "description": "An Ethereum Marketplace",
+  "description": "covid19 Travel Permit dApp",
   "author": "Ahmet Omer Kayabasi",
   "dependencies": {
     "babel-polyfill": "6.26.0",
@@ -14,18 +14,24 @@
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "chai-bignumber": "3.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
     "react": "16.8.4",
     "react-bootstrap": "1.0.0-beta.5",
     "react-dom": "16.8.4",
     "react-scripts": "2.1.3",
     "truffle": "5.0.5",
+    "truffle-hdwallet-provider": "^1.0.17",
     "web3": "^1.0.0-beta.55"
   },
   "scripts": {
+    "pre": "cross-env",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "migrate": "truffle migrate",
+    "deploy": "truffle migrate --network ropsten"
   },
   "eslintConfig": {
     "extends": "react-app"

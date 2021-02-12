@@ -4,7 +4,7 @@ const approvePermit = ({permitApproval}) => {
     const [id, setId] = useState("")
 
     return <div style={{display:"flex", flexDirection:"column"}}>
-        <h1>Approve Permit Request</h1>
+        <h2>Approve Permit Request</h2>
         <div style={{display:"flex", flexDirection:"column"}}>
         <input value={id}
             placeholder='Travel Id'

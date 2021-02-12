@@ -12,6 +12,8 @@ import SearchPermit from './searchPermit';
 import Details from './Details';
 import AdminPanel from './AdminPanel';
 
+import Register from './userRegister';
+
 
 
 class App extends Component {
@@ -94,6 +96,14 @@ class App extends Component {
       this.setState(oldState => {return {...oldState, requests: newRequests}})
       console.log(this.state.requests)
 
+
+      const user = await contract.methods.citizens(this.state.account).call()
+
+      this.setState({name:user[0], surname:user[1], citizenshipnumber:user[2]})
+
+      console.log(user)
+
+
     } else {
       window.alert('Smart contract not deployed to detected network.')
     }
@@ -108,7 +118,10 @@ class App extends Component {
       travelCount: 0,
       requests: [],
       userRole: 2,
-      queryRequest:[]
+      queryRequest:[],
+      name:"",
+      surname:"",
+      citizenshipnumber:""
     }
   }
 
@@ -177,10 +190,16 @@ class App extends Component {
     //this.state.queryRequest(oldState => {return {...oldState, requests: newRequests}})   
     this.setState(oldState => {return {...oldState, queryRequest: newRequests}})
  
-    console.log(this.state.queryRequest)
   }
 
   searchTravel = async (id) => await this.state.contract.methods.travels(id).call();
+
+  searchCitizen = async(addr) => await this.state.contract.methods.citizens(addr).call();
+
+  userRegister = async (name,surname,id) => {
+    await this.state.contract.methods.userRegister(name,surname,id).send({ from: this.state.account })
+    console.log("asdasdfasdf")
+  }
 
 
 
@@ -196,6 +215,9 @@ class App extends Component {
           >
             Travel Permit System
           </a>
+          <small className="text-white"><span id="account">{this.state.name}</span></small>
+          <small className="text-white"><span id="account">{this.state.surname}</span></small>
+          <small className="text-white"><span id="account">{this.state.citizenshipnumber}</span></small>
           <small className="text-white"><span id="account">{this.userState()}</span></small>
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
@@ -204,6 +226,12 @@ class App extends Component {
             </li>
           </ul>
         </nav>
+        <br></br>
+        <br></br>
+        {this.state.name == "" &&
+          <Register myFunc={(name,surname,id) => this.userRegister(name,surname,id)} ></Register>
+        }
+        { this.state.name != "" &&
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
@@ -243,6 +271,7 @@ class App extends Component {
             setMaintain = {a => this.setMaintainer(a)}
             searchTrv = {c => this.searchTravel(c)}
             trvByAddr = {a => this.getTravelsByAddress(a)}
+            searchCit = {a => this.searchCitizen(a)}
 
             ></AdminPanel>
             </div>}
@@ -266,7 +295,7 @@ class App extends Component {
 
             
             </main>}
-        </div>
+        </div>}
       </div>
     );
   }

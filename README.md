@@ -16,6 +16,7 @@ Decentralized covid19 Travel Permission app made with Solidity &amp; React.js. M
 - There is an Admin panel in the dApp, to see it, you need be an admin. (Obviously..)
 - Maintainer role doesn't do anything at the moment, might add something later.
 - There are bugs, A LOT OF THEM. If you spot any of them just say hello and move on with your life.
+- Contact me if there is anything you want to add. ahmetomer@sabanciuniv.edu
 
 ## Special Thanks
 @aliparlakci, a.k.a React.js god himself

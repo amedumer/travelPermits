@@ -1,4 +1,4 @@
-# You can find the live deployed version at https://amedumer.github.io/travelPermits-live/
+## You can now find the live deployed version at https://amedumer.github.io/travelPermits-live/
 
 # travelPermits
 Decentralized covid19 Travel Permission app made with Solidity &amp; React.js. Made in Tübitak Bilgem Blockchain Research Lab
@@ -8,8 +8,8 @@ Decentralized covid19 Travel Permission app made with Solidity &amp; React.js. M
 # How to use
 - Run ```sudo npm install```
 - Change the initial admin's address in the ```/src/contracts/travelPermit.sol``` (Most preferably your address in Metamask)
-- Run ```sudo truffle migrate```, this will migrate the contract to Ropsten Network.
-- After succesfull migration, copy Transaction hash and Contract address of travelPermit.sol and store it somewhere. You might use it somewhere else
+- Run ```sudo truffle migrate```, this will migrate the contract to local blockchain network (Have Ganache running).
+- After succesfull migration, copy Transaction hash and Contract address of travelPermit.sol and store it somewhere. You might use it later
 - Run ```sudo npm run build``` and ```sudo npm run start```
 
 

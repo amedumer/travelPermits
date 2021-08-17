@@ -1,6 +1,7 @@
 ## You can now find the live deployed version at https://amedumer.github.io/travelPermits-live/
 
 # travelPermits
+![travelPermits](https://i.ibb.co/9bc4H7n/Screenshot-116.png)
 Decentralized covid19 Travel Permission app made with Solidity &amp; React.js. Made in Tübitak Bilgem Blockchain Research Lab
 
 - This dApp uses Ropsten Test Network.

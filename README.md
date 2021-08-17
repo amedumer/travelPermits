@@ -16,6 +16,7 @@ Decentralized covid19 Travel Permission app made with Solidity &amp; React.js. M
 
 # Things to note
 - Every mapping and data is public in the contract file, I had no time to fix bugs. Take it or leave it buddy, I personally thank god since it works
+- Start and End time uses Unix time.
 - There is an Admin panel in the dApp, to see it, you need be an admin. (Obviously..)
 - Maintainer role doesn't do anything at the moment, might add something later.
 - There are bugs, A LOT OF THEM. If you spot any of them just say hello and move on with your life.
